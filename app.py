@@ -99,7 +99,7 @@ def create_interface(api_key=None):
                 audio_input = gr.Audio(
                     label="Upload Audio File",
                     type="filepath",
-                    sources=["upload"]
+                    sources=["upload", "microphone"]
                 )
                 
                 transcribe_btn = gr.Button(
