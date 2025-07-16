@@ -1,0 +1,17 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+api-keys.txt
+groq_request.sh
+transcripts/*
+.gradio
+.dista
+audio.m4a
+.env
