@@ -105,7 +105,6 @@ def create_interface(api_key=None):
                 # Fallback file upload for iPhone compatibility
                 file_input = gr.File(
                     label="Or upload audio file directly (iPhone users)",
-                    file_types=["audio/*"],
                     type="filepath"
                 )
                 
@@ -189,8 +188,8 @@ if __name__ == "__main__":
     # Create and launch the interface
     demo = create_interface()
     demo.launch(
-        server_name="0.0.0.0",
+        server_name="localhost",
         server_port=7860,
-        share=False,
+        share=True,
         show_error=True
     ) 
