@@ -8,8 +8,6 @@ certifi==2025.7.14
 charset-normalizer==3.4.2
 click==8.2.1
 comm==0.2.2
-debugpy==1.8.15
-decorator==5.2.1
 distro==1.9.0
 dotenv==0.9.9
 executing==2.2.0
@@ -38,7 +36,6 @@ markupsafe==3.0.2
 matplotlib-inline==0.1.7
 mdurl==0.1.2
 nest-asyncio==1.6.0
-numpy==2.3.1
 orjson==3.11.0
 packaging==25.0
 pandas==2.3.1
@@ -46,7 +43,6 @@ parso==0.8.4
 pexpect==4.9.0
 pillow==11.3.0
 platformdirs==4.3.8
-psutil==7.0.0
 ptyprocess==0.7.0
 pure-eval==0.2.3
 pydantic==2.11.7
@@ -70,7 +66,6 @@ stack-data==0.6.3
 starlette==0.47.1
 tomlkit==0.13.3
 tqdm==4.67.1
-traitlets==5.14.3
 typer==0.16.0
 typing-extensions==4.14.1
 typing-inspection==0.4.1

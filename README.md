@@ -24,7 +24,7 @@ A Python application for transcribing audio files using Groq's Whisper model. Th
 1. Clone or download this repository
 2. Install dependencies:
    ```bash
-   uv sync
+   pip install -r requirements.txt
    ```
 
 3. Create a `.env` file in the project root with your Groq API key:
@@ -39,37 +39,18 @@ A Python application for transcribing audio files using Groq's Whisper model. Th
 Run the Gradio web interface:
 
 ```bash
-uv sync app.py
-```
-
-Or use the convenience script:
-
-```bash
-uv run run_app.py
+python app.py
 ```
 
 The web interface will be available at `http://localhost:7860`
 
 **Features of the Web UI:**
-- Drag and drop audio file upload
-- Real-time transcription
-- Formatted results display
-- Automatic file saving
-- Support for multiple audio formats
-
-### Command Line
-
-For command-line usage, modify the `main.py` file to point to your audio file:
-
-```python
-filename = "path/to/your/audio.m4a"  # Update this line
-```
-
-Then run:
-
-```bash
-python main.py
-```
+- **Drag and drop audio file upload**: Easy file selection via web interface
+- **Real-time transcription**: Auto-transcribe when file is uploaded
+- **Microphone recording**: Record audio directly in the browser
+- **Formatted results display**: Timestamped transcription with metadata
+- **Automatic file saving**: Saves both JSON and formatted text files
+- **Download capability**: Download formatted transcriptions
 
 ## Supported Audio Formats
 
@@ -86,7 +67,7 @@ python main.py
 
 The application generates:
 
-1. **Console Output**: Formatted transcription results
+1. **Formatted Text Files**: Timestamped transcription saved as `transcripts/{filename}_formatted.txt`
 2. **JSON Files**: Detailed transcription data saved in the `transcripts/` folder
 3. **Web UI**: Interactive display with transcription text and metadata
 
@@ -122,11 +103,9 @@ The app uses the following default settings:
 ```
 groq/
 ├── app.py              # Gradio web UI
-├── main.py             # Command-line interface
-├── run_app.py          # Convenience script
-├── pyproject.toml      # Project dependencies
+├── requirements.txt    # Project dependencies
 ├── README.md           # This file
-├── transcripts/        # Output folder for JSON files
+├── transcripts/        # Output folder for transcription files
 └── .env               # Environment variables (create this)
 ```
 
@@ -141,8 +120,8 @@ groq/
 
 ### Getting Help
 
-- Check that all dependencies are installed: `uv sync`
-- Verify your API key is correct
+- Check that all dependencies are installed: `pip install -r requirements.txt`
+- Verify your API key is correct in the `.env` file
 - Ensure your audio file is not corrupted
 - Check the console output for detailed error messages
 

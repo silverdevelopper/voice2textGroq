@@ -102,11 +102,7 @@ def create_interface(api_key=None):
                     sources=["upload", "microphone"]
                 )
                 
-                # Fallback file upload for iPhone compatibility
-                file_input = gr.File(
-                    label="Or upload audio file directly (iPhone users)",
-                    type="filepath"
-                )
+        
                 
                 transcribe_btn = gr.Button(
                     "🎤 Transcribe Audio",
@@ -150,30 +146,24 @@ def create_interface(api_key=None):
         filename_state = gr.State()
         
         # Function to handle either input
-        def handle_audio_input(audio_file, file_upload):
-            audio_source = audio_file if audio_file else file_upload
-            return transcribe_audio(audio_source)
+        def handle_audio_input(audio_file):
+            return transcribe_audio(audio_file)
         
         # Connect the button to the function
         transcribe_btn.click(
             fn=handle_audio_input,
-            inputs=[audio_input, file_input],
+            inputs=[audio_input],
             outputs=[output_text, filename_state, download_btn]
         )
         
         # Auto-transcribe when file is uploaded
         audio_input.change(
             fn=handle_audio_input,
-            inputs=[audio_input, file_input],
+            inputs=[audio_input],
             outputs=[output_text, filename_state, download_btn]
         )
         
-        # Auto-transcribe when file is uploaded via file input
-        file_input.change(
-            fn=handle_audio_input,
-            inputs=[audio_input, file_input],
-            outputs=[output_text, filename_state, download_btn]
-        )
+
         
         # Handle download button click
         download_btn.click(
