@@ -7,5 +7,6 @@ requires-python = ">=3.12"
 dependencies = [
     "gradio>=4.0.0",
     "groq",
-    "python-dotenv"
+    "python-dotenv",
+    "mcp[cli]",
 ]

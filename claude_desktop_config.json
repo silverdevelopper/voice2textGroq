@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "groq-audio-transcription": {
+      "command": "uv",
+      "args": ["run", "python", "mcp_server.py"],
+      "cwd": "/Users/ngumus/Desktop/groq",
+      "env": {
+        "GROQ_API_KEY": "your-groq-api-key-here"
+      }
+    }
+  }
+}

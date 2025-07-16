@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python test_mcp_server.py:*)",
+      "Bash(uv add:*)",
+      "Bash(uv run:*)",
+      "WebFetch(domain:github.com)"
+    ],
+    "deny": []
+  }
+}
