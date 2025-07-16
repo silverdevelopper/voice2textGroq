@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Initialize the Groq client
-client = Groq()
+client = None
 
 def transcribe_audio(audio_file):
     """
@@ -87,7 +87,9 @@ def download_transcription(txt_filename):
     return None
 
 # Create the Gradio interface
-def create_interface():
+def create_interface(api_key=None):
+    global client
+    client = Groq(api_key=api_key)
     with gr.Blocks(title="Groq Audio Transcription", theme=gr.themes.Soft()) as demo:
         gr.Markdown("# 🎵 Groq Audio Transcription")
         gr.Markdown("Upload an audio file to transcribe it using Groq's Whisper model.")
